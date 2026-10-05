@@ -1,22 +1,21 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuestionController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [HomeController::class, 'index']);
+
 Route::get('/pcr', function () {
     return 'Selamat Datang di Website Kampus PCR!';
 });
 
-Route::get('/mahasiswa', function () {
-    return 'Halo Mahasiswa';
-})->name('mahasiswa.show');
-
-Route::get('/nama/{$param1}', function ($param1) {
+Route::get('/nama/{raihannofendri}', function ($param1) {
     return 'Nama saya: '.$param1;
 });
 
@@ -24,6 +23,14 @@ Route::get('/nim/{param1?}', function ($param1 = '2557301109') {
     return 'NIM saya: '.$param1;
 });
 
-route:: get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
+Route::get('/mahasiswa', function () {
+    return 'Halo Mahasiswa';
+});
 
-Route:: get('/home',[HomeController::class, 'index']);
+Route::get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
+
+Route::post('/question/store', [QuestionController::class, 'store'])
+    ->name('question.store');
+
+Route::get('/question', [QuestionController::class, 'index'])
+    ->name('question.index');
