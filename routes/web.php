@@ -40,3 +40,4 @@ Route::get('/question', [QuestionController::class, 'index'])
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('pelanggan', PelangganController::class);
+ 
