@@ -22,7 +22,7 @@
         <h1 class="mb-1 font-medium">Let's get started</h1>
 
 <!-- Contoh penggunaan route pada tag href -->
-<a href="{{ route('mahasiswa.show') }}">Klik Disini</a>
+{{-- <a href="{{ route('mahasiswa.show') }}">Klik Disini</a> --}}
 
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
             @if (Route::has('login'))
